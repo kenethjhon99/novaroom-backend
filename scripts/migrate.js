@@ -44,6 +44,9 @@ const createClient = () => {
 };
 
 const ensureSchemaMigrations = async (client) => {
+  await client.query("CREATE SCHEMA IF NOT EXISTS public;");
+  await client.query("SET search_path TO public;");
+
   await client.query(`
     CREATE TABLE IF NOT EXISTS schema_migrations (
       id SERIAL PRIMARY KEY,
