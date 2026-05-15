@@ -1,0 +1,13 @@
+-- NovaRoom initial schema baseline.
+-- Source of truth for this baseline: ../../bd-backup/bdnovaroom.sql
+--
+-- The backup supplied for the current database is a PostgreSQL custom dump
+-- even though it has a .sql extension. Keep that dump archived and generate
+-- future text migrations from schema diffs after this baseline.
+--
+-- Restore baseline manually with pg_restore in a controlled environment:
+--   pg_restore --clean --if-exists --dbname "$DATABASE_URL" ../../bd-backup/bdnovaroom.sql
+--
+-- Do not add application changes directly to this file. Add forward-only
+-- migrations as 0002_*.sql, 0003_*.sql, etc.
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
